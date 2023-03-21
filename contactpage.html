@@ -18,31 +18,44 @@
     <!-- create a row with a gutter to give a space inside of design -->
     <!-- use the formsubmit action to send email -->
     <form class = "row g-3" action="https://formsubmit.co/072f878733457f6a947b041e715750ac" method="POST">
+      <!-- Honeypot, catch spammers that go into code and fill form out -->
+      <!-- normal user wont see it because display:none -->
+      <input type="text" name="_honey" style="display:none;">
+      <!-- can now disable captcha beacuse of honeypot -->
+      <input type="hidden" name="_captcha" value="false">
+
+      <!-- add success page after contact email sent -->
+      <input type="hidden" name="_next" value="http://127.0.0.1:5500/success.html">
+
       <!-- create columns, bootstrap uses a 12 grid so by using 6 each column will be 50% of screen  -->
       <div class="col-md-6">
         <!-- Create the title for the input text box -->
         <label for="firstName" class="form-label">First Name</label>
         <!-- create the input box of type text, for the firstName, make it required -->
-        <input type="text" class="form-control" id="firstName" required>
+        <!-- the name="" part tells the email what to say, without it the email would be blank -->
+        <input type="text" class="form-control" name="Name" id="firstName" required>
       </div>
       <div class="col-md-6">
         <!-- Create the title for the input text box -->
         <label for="lastName" class="form-label">Last Name</label>
         <!-- create the input box of type text, for the lastName, make it required -->
-        <input type="text" class="form-control" id="lastName" required>
+        <!-- the name="" part tells the email what to say, without it the email would be blank -->
+        <input type="text" class="form-control" name="Last&nbsp;Name" id="lastName" required>
       </div>
       <div class="col-md-8">
         <label for="emailInfo" class="form-label">E-mail</label>
-        <input type="email" class="form-control" id="emailInfo" required>
+        <input type="email" class="form-control" name="Email" id="emailInfo" required>
       </div>
       <div class="col-md-4">
         <label for="phoneNumber" class="form-label">Phone Number</label>
-        <input type="text" class="form-control" id="phoneNumber" placeholder="(123) 456-7890">
+        <!-- the name="" part tells the email what to say, without it the email would be blank -->
+        <input type="text" class="form-control" name="Phone" id="phoneNumber" placeholder="(123) 456-7890">
       </div>
       <div class="col-md-12">
         <label for="comments" class="form-label">Comments, questions?</label>
         <!-- add a text area, do not drop the /textarea down or it adds negative space -->
-        <textarea class="form-control" id="comments" row="3" required></textarea>
+        <!-- the name="" part tells the email what to say, without it the email would be blank -->
+        <textarea class="form-control" id="comments" name="Comments,&nbsp;questions" row="3" required></textarea>
       </div>
       <div class="col-md-12">
         <!-- create a button, class is bootstraps button -->
