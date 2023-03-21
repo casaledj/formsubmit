@@ -4,6 +4,40 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
+  
+}
+
+.header-main {
+  width: 100%;
+  height: 40px;
+  background: #0a192f;
+  justify-content: space-between;
+}
+
+.header-main-nav {
+  text-align: right;
+  height: 100%; 
+}
+
+.header-main-nav ul {
+  /* gets rid of bullet points */
+  list-style: none; 
+}
+
+
+.header-main-nav li {
+  display: inline-block; 
+}
+
+
+.header-main-nav li a {
+  padding: 0 10px 0 10px;
+  text-decoration: none;  
+  color: white;
+}
+
+.header-main-nav li a:hover {
+  color:aqua; 
 }
 
 header {
@@ -14,7 +48,7 @@ header {
   height: 80px;
 }
 
-header h4 {
+h4 {
   text-align: center;
   margin-top: 50px;
   bottom: 1rem;
@@ -60,4 +94,14 @@ header h4 {
   bottom: 150px;
   opacity: 0;
   transition: ease-in-out 0.5s;
+}
+
+body {
+  background-color: #0a192f;
+  color: white;
+  
+}
+
+.introToMe {
+  color: #8892b0;
 }
