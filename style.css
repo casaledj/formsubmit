@@ -37,7 +37,7 @@
 }
 
 .header-main-nav li a:hover {
-  color:aqua; 
+  color:#ff004f; 
 }
 
 header {
@@ -59,7 +59,7 @@ header {
 }
 
 .header-text h4 span {
-  color:aqua;
+  color: #ff004f;
 }
 
 
@@ -102,6 +102,11 @@ header {
   bottom: 150px;
   opacity: 0;
   transition: ease-in-out 0.5s;
+}
+
+/* allows nav bar to go to sections in page */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -215,5 +220,153 @@ body {
 .work img{
   width: 100%;
   border-radius: 10px;
+  display: block;
+  /* zoom in on hover */
+  transition: transform 0.5s;
+}
+
+.layer{
+  width: 100%;
+  height: 0;
+  background: linear-gradient(rgba(0,0,0,0.5), #ff004f);
+  border-radius: 10px;
+  position: absolute;
+  left:0;
+  bottom: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  text-align: center;
+  font-size: 14px;
+  /* show gradient and description on hover */
+  transition: height 0.5s;
+}
+
+.layer h3{
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.layer a{
+  margin-top: 20px;
+  color: #ff004f;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 60px;
+  background: #ffffff;
+  width: 60px;
+  height: 60px;
+  /* 0% is a square */
+  border-radius: 50%;
+  text-align: center;
+}
+
+.work:hover img {
+  /* zoom in picture over hover */
+  transform: scale(1.1);
+}
+
+.work:hover .layer {
+  /* show gradient and description on hover */
+  height: 100%;
+}
+
+.btn {
+  display: block;
+  /* auto left right top bottom 50px -> centered */
+  margin: 50px auto;
+  width: fit-content;
+  border: 1px solid #ff004f;
+  padding: 14px 50px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #ffffff;
+  transition: background .5s;
+}
+
+.btn:hover{
+  background: #ff004f;
+}
+
+/* CONTACT */
+.contact-left{
+  flex-basis: 35%;
+}
+
+.contact-right{
+  flex-basis: 60%;
+}
+
+.contact-left p{
+  margin-top: 30px;
+}
+
+.contact-left p i{
+  color: #ff004f;
+  margin-right: 15px;
+  font-size: 25px;
+}
+
+.social-icons{
+  margin-top: 30px;
+}
+
+.social-icons a{
+  text-decoration: none;
+  font-size: 30px;
+  margin-right: 15px;
+  color: #ababab;
+  display: inline-block;
+  transition: transform 0.5s;
+}
+
+.social-icons a:hover{
+  color: #ff004f;
+  /* move icon up  */
+  transform: translateY(-5px);
+}
+
+.btn.btn2 {
+  display: inline-block;
+  background: #ff004f;
+}
+
+.contact-right form {
+  width: 97.4%;
+  
+}
+
+form input, form textarea{
+  width: 100%;
+  border: 0;
+  outline: none;
+  background: #262626;
+  margin: 15px;
+  padding: 15px;
+  color: #ffffff;
+  font-size: 18px;
+  border-radius: 6px;
+}
+
+form .btn2{
+  position: absolute;
+  padding: 14px 60px;
+  font-size: 18px;
+  margin-top: 20px;
+  cursor: pointer;
+
+}
+
+#enter{
+  margin-left: 15px;
+}
+
+#msg {
+  color: #61b752;
+  margin-top: -10px;
+  margin-left: 15px;
   display: block;
 }

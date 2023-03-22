@@ -27,10 +27,10 @@
     <!-- navigation tag inside website  -->
     <nav class="header-main-nav">
       <ul>
-        <li><a href="#">About Me</a></li>
-        <li><a href="#">Portfolio</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Resume</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="/images/UpdatedResumeCopy_1.pdf" target="_blank">Resume</a></li>
       </ul>
     </nav>
   </header>
@@ -68,7 +68,7 @@
           <div class="tab-contents" id="experience">
             <ul>
               <li><span>2021-2023</span><br>Marketing Consultant at Black Kite Games</li>
-              <li><span>2012-2012</span><br>IT Support at Gerald Casale M.D.</li>
+              <li><span>2012-2013</span><br>IT Support at Gerald Casale M.D.</li>
             </ul>
           </div>
           <div class="tab-contents" id="education">
@@ -118,11 +118,38 @@
           </div>
         </div>
       </div>
+      <a href="#" class="btn">See more</a>
     </div>
   </div>
 
-  <!-- target blank opens link in new tab -->
-  <a href="contactpage.html" target="_blank">Contact Me!</a>
+  <!-- CONTACT -->
+  <div id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="contact-left">
+          <h1 class="sub-title">Contact Me</h1>
+          <p><i class="fa-sharp fa-solid fa-paper-plane"></i> contact@example.com</p>
+          <p><i class="fa-solid fa-square-phone"></i> 000-123-4567</p>
+          <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+          </div>
+          <a href="images/UpdatedResumeCopy_1.pdf" download class="btn btn2">Download Resume</a>
+        </div>
+        <div class="contact-right">
+          <form name="submit-to-google-sheet">
+            <input type="text" name="Name" placeholder="Your Name" required>
+            <input type="email" name="Email" placeholder="Your Email" required>
+            <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+            <button id="enter" type="submit" class="btn btn2">Submit</button>
+          </form>
+          <span id="msg"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
 
   <script src="app.js"></script>
   <script>
@@ -142,6 +169,23 @@
     }
   </script>
  
+ <script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbzU2dsYI1_N3u64d9JMcO3rwiAQmwRvhjxOmWA6fp19IFr-R9HhrtwslCTBJ0N5u6tC/exec'
+  const form = document.forms['submit-to-google-sheet']
+  const msg = document.getElementById('msg');
 
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+        msg.innerHTML="Message sent successfully."
+        setTimeout(function(){
+          msg.innerHTML=""
+        },5000)
+        form.reset()
+      })
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
 </body>
 </html>
