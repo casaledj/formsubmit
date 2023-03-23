@@ -17,6 +17,7 @@
 .header-main-nav {
   text-align: right;
   height: 100%; 
+  font-size: 110%;
 }
 
 .header-main-nav ul {
@@ -51,6 +52,7 @@ header {
 .header-text{
   margin-top: 10%;
   font-size: 30px;
+  text-align: center;
 }
 
 .header-text h4{
@@ -124,12 +126,9 @@ body {
   /* 80 px top and bottom, 0 left and right */
   padding: 80px 0px;
   color: #ababab;
+  font-size: 130%;
 }
 
-#about p{
-  padding-left: 0;
-  padding-right: 300px;
-}
 
 .row{
   display: flex;
@@ -139,21 +138,19 @@ body {
 
 .about-col-1 {
   /* width of column 1 is 35% */
-  flex-basis: 25%;
+  flex-basis: 35%;
 }
 
 .about-col-1 img{
   width: 100%;
-  height: 800px;
+  height: 80%;
   border-radius: 15px;
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-top: 23px;
+ 
   
 }
 
 .about-col-2{
-  flex-basis: 75%;
+  flex-basis: 60%;
 }
 
 .sub-title{
@@ -165,6 +162,8 @@ body {
 .tab-titles {
   display:flex;
   margin: 20px 0 40px;
+  
+  color: white;
 
 }
 
@@ -194,11 +193,14 @@ body {
 .tab-contents ul li{
   list-style: none;
   margin: 10px 0;
+  
+  
 }
 
 .tab-contents ul li span{
   color: #b54769;
   font-size: 14px;
+  font-size: 110%;
 }
 
 .tab-contents{
@@ -229,6 +231,7 @@ body {
 
 .work img{
   width: 100%;
+  height: 100%;
   border-radius: 10px;
   display: block;
   /* zoom in on hover */
@@ -304,6 +307,7 @@ body {
 /* CONTACT */
 .contact-left{
   flex-basis: 35%;
+  
 }
 
 .contact-right{
@@ -312,6 +316,7 @@ body {
 
 .contact-left p{
   margin-top: 30px;
+  text-align: center;
 }
 
 .contact-left p i{
@@ -320,8 +325,13 @@ body {
   font-size: 25px;
 }
 
+h1.sub-title{
+  text-align: center;
+}
+
 .social-icons{
   margin-top: 30px;
+  text-align: center;
 }
 
 .social-icons a{
@@ -330,18 +340,19 @@ body {
   margin-right: 15px;
   color: #ababab;
   display: inline-block;
-  transition: transform 0.5s;
+  transition: color 0.5s;
 }
 
 .social-icons a:hover{
   color: #ff004f;
   /* move icon up  */
-  transform: translateY(-5px);
+  
 }
 
 .btn.btn2 {
-  display: inline-block;
+  display: block;
   background: #ff004f;
+  margin: 50px auto;
 }
 
 .contact-right form {
